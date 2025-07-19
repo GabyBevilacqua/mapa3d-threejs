@@ -1,0 +1,24 @@
+{
+  "name": "maps3d",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.58.1",
+    "@types/three": "^0.178.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.10",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "reflect-metadata": "^0.2.2",
+    "three": "^0.178.0",
+    "tsyringe": "^4.10.0"
+  }
+}
