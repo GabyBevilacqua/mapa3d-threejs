@@ -1,6 +1,7 @@
 import { container, singleton, injectable } from "tsyringe";
 import { MapManager } from "./mapManager";
-import type { InputManager } from "./inputManager";
+import { InputManager } from "./inputManager";
+import { WebGlOverlayManager } from "./webgLoverlayManager";
 
 @singleton()
 @injectable()
@@ -10,13 +11,15 @@ class App
 
   constructor(
     private readonly mapManager: MapManager,
-   // private readonly inputManager: InputManager     da error
+    private readonly inputManager: InputManager, 
+    private readonly webGlOverlayManager: WebGlOverlayManager,
   ) { }
 
   public async Start(): Promise<void>
   {
-    // this.inputManager.Start();    da error
-    await this.mapManager.Start();
+    this.inputManager.Start()  
+    await this.mapManager.Start()
+    this.webGlOverlayManager.Start();
   } 
 
 }
