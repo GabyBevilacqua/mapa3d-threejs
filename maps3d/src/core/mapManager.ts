@@ -17,14 +17,17 @@ export class MapManager
             lng: -3.8532    // Madrid   -3.7038
         },
         mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
-        restriction: {
-            latLngBounds: {
-                north: 40.6,   // un poco al norte de Madrid
-                south: 38.8,   // al sur de Malagón
-                east: -3.0,    // al este de Madrid
-                west: -4.5     // al oeste de Malagón
-            }
-        }
+        // restriction: {
+        //     latLngBounds: {
+        //         north: 40.6,   // un poco al norte de Madrid
+        //         south: 38.8,   // al sur de Malagón
+        //         east: -3.0,    // al este de Madrid
+        //         west: -4.5     // al oeste de Malagón
+        //     },
+        //     strictBounds: true
+        // },
+       // disableDefaultUI: true,
+        //gestureHandling: "none",
     }
 
     public apiOptions = {
@@ -39,7 +42,7 @@ export class MapManager
 
     constructor(private readonly inputManager: InputManager) 
     {
-        // Initialization code here
+        
     }
     public async Start(): Promise<void>
     {
@@ -68,7 +71,7 @@ export class MapManager
             this.mapOptions.heading += this.angularSpeed;
         }
 
-        this.mapOptions.heading = this.mapOptions.heading % 360; // Ensure heading stays within 0-360 degrees
+        this.mapOptions.heading = this.mapOptions.heading  % 360; // Ensure heading stays within 0-360 degrees
 
         this.map.moveCamera({
             tilt: this.mapOptions.tilt,

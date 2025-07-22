@@ -29,8 +29,6 @@ export class WebGlOverlayManager
         this.webGlOverlayView.onContextRestored = ({ gl }) => this.renderManager3D.ContextRestore(gl);
         this.webGlOverlayView.onDraw = ({ transformer }) => this.Update(transformer);
 
-        // Here you can add your custom rendering logic
-
     }
 
     private Update(transformer: google.maps.CoordinateTransformer): void
