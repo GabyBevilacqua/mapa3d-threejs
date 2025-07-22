@@ -13,7 +13,7 @@ export class SceneManager
         this.CreateScene();
         this.CreateCamera();
         this.CreateLights();
-       // this.LoadModel();
+        this.LoadModel();
     }
 
     private CreateScene(): void
@@ -33,19 +33,19 @@ export class SceneManager
         this.scene.add(ambientLight);
     }
 
-    // private LoadModel(): void
-    // {
-    //     this.loader = new GLTFLoader()
-    //     const source = 'pin.gltf'
+    private LoadModel(): void
+    {
+        this.loader = new GLTFLoader()
+        const source = 'pin.gltf'
 
-    //     this.loader.load(
-    //         source, 
-    //         (gltf) => 
-    //         {
-    //             gltf.scene.scale.set(25, 25, 25);
-    //             gltf.scene.rotation.x = 180 * Math.PI / 180; // Convert degrees to radians
-    //             this.scene.add(gltf.scene)
-    //         }
-    //     )
-    //}
+        this.loader.load(
+            source, 
+            (gltf) => 
+            {
+                gltf.scene.scale.set(25, 25, 25);
+                gltf.scene.rotation.x = 180 * Math.PI / 180; // Convert degrees to radians
+                this.scene.add(gltf.scene)
+            }
+        )
+    }
 }

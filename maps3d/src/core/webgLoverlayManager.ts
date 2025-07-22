@@ -33,6 +33,7 @@ export class WebGlOverlayManager
 
     private Update(transformer: google.maps.CoordinateTransformer): void
     {
+        console.log('WebGlOverlayManager.Update')
         this.mapManager.UpdatePosition();
         this.UpdateSceneCamera(transformer);
         this.webGlOverlayView.requestRedraw();
